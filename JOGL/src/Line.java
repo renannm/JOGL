@@ -13,11 +13,16 @@ public  class Line implements GLEventListener {
    public void display(GLAutoDrawable drawable) {
       final GL2 gl = drawable.getGL().getGL2();
             
-      gl.glBegin (GL2.GL_LINES);//static field
-      gl.glVertex3f(0.50f,-0.50f,0);
-      gl.glVertex3f(-0.50f,0.50f,0);
-      gl.glEnd();
-
+//      gl.glBegin (GL2.GL_LINES);//static field
+//      gl.glVertex3f(0.50f,-0.50f,0);
+//      gl.glVertex3f(-0.50f,0.50f,0);
+//      gl.glEnd();
+//		TRIANGULO EXEMPLO
+      gl.glBegin(GL2.GL_TRIANGLES);
+      gl.glVertex2f(1.0f,0);
+      gl.glVertex2f(0,0);
+      gl.glVertex2f(0,1.0f);
+      gl.glEnd();		
    }
             
    @Override
