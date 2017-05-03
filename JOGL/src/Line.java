@@ -12,19 +12,67 @@ public  class Line implements GLEventListener {
    @Override
    public void display(GLAutoDrawable drawable) {
       final GL2 gl = drawable.getGL().getGL2();
-            
+      final GL2 gl2 = drawable.getGL().getGL2();
+      final GL2 gl3 = drawable.getGL().getGL2();
+      final GL2 gl4 = drawable.getGL().getGL2();
+//final GL2 gl = drawable.getGL().getGL2();
+//		LINHA EXEMPLO      
 //      gl.glBegin (GL2.GL_LINES);//static field
 //      gl.glVertex3f(0.50f,-0.50f,0);
 //      gl.glVertex3f(-0.50f,0.50f,0);
 //      gl.glEnd();
-//		TRIANGULO EXEMPLO
-      gl.glBegin(GL2.GL_TRIANGLES);
-      gl.glVertex2f(1.0f,0);
-      gl.glVertex2f(0,0);
-      gl.glVertex2f(0,1.0f);
-      gl.glEnd();		
-   }
-            
+      
+//	  TRIANGULO EXEMPLO
+//      gl.glBegin(GL2.GL_TRIANGLES);
+//      gl.glVertex2f(1.0f,0);
+//      gl.glVertex2f(0,0);
+//      gl.glVertex2f(0,1.0f);
+//      gl.glEnd();		
+//   }
+  // LEMBRAR -> glVertex2f(x,y) partindo sempre do 0 (centro)
+   
+ //	QUADRADO BASE - COLORIDO EM OPENGL
+   gl2.glBegin(GL2.GL_QUADS);
+   gl2.glColor3f(0f,0f,1f); // Setando Azul
+   gl2.glVertex2f(0.5f, -0.5f); // Setando Lado 01
+   //gl2.glColor3f(0f,1f,0f); // Setando Verde
+   gl2.glVertex2f(0.5f, 0.5f); // Setando Lado 02
+   //gl2.glColor3f(1f,0f,0f); // Setando Vermelho
+   gl2.glVertex2f(-0.5f, 0.5f); // Setando Lado 03
+   gl2.glVertex2f(-0.5f, -0.5f); // Setando Lado 04
+   gl2.glEnd();
+
+ //	  TRIANGULO DO TETO - COLORIDO EM OPENGL
+   gl.glBegin(GL2.GL_TRIANGLES);
+   gl.glColor3f(1f,  0f,  0f);   //nos da vermelho          
+   gl.glVertex2f(0f,1f); // Lado 01
+   //gl.glColor3f(0f,  1f,  0f);   //nos da verde           
+   gl.glVertex2f(0.61f,0.51f);	// Lado 02 
+   //gl.glColor3f(0f,  0f,  1f);	//nos da azul  
+   gl.glVertex2f(-0.61f,0.51f); //Lado 03
+   gl.glEnd();
+   
+   //	QUADRADO DA PORTA - COLORIDO EM OPENGL
+   gl3.glBegin(GL2.GL_QUADS);
+   gl3.glColor3f(0f,1f,0f); // Setando Verde
+   gl3.glVertex2f(0f, -0.45f); // Setando Lado 01
+   gl3.glVertex2f(0.2f, -0.45f); // Setando Lado 02
+   gl3.glVertex2f(0.2f, 0.2f); // Setando Lado 04
+   gl3.glVertex2f(0f, 0.2f); // Setando Lado 03
+   gl3.glEnd();
+   
+   //	QUADRADO DA JANELA - COLORIDO EM OPENGL
+   gl4.glBegin(GL2.GL_QUADS);
+   gl4.glColor3f(0f,0.7f,0.7f); // Setando Verde
+   gl4.glVertex2f(-0.2f, 0.45f); // Setando Lado 01
+   gl4.glVertex2f(-0.4f, 0.45f); // Setando Lado 02
+   gl4.glVertex2f(-0.4f, 0.2f); // Setando Lado 04
+   gl4.glVertex2f(-0.2f, 0.2f); // Setando Lado 03
+   gl4.glEnd();
+   
+   
+   } // FIM 
+   
    @Override
    public void dispose(GLAutoDrawable arg0) {
       //method body
@@ -47,9 +95,10 @@ public  class Line implements GLEventListener {
       Line line = new Line();
       glcanvas.addGLEventListener(line);
       glcanvas.setSize(400, 400);
+      
    
-      //creating frame
-      final JFrame frame = new JFrame ("straight Line");
+      //creating first frame
+      final JFrame frame = new JFrame ("Casa Colorida");
    
       //adding canvas to frame
       frame.getContentPane().add(glcanvas);
