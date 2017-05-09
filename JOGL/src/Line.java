@@ -33,28 +33,24 @@ public  class Line implements GLEventListener {
    
  //	QUADRADO BASE - COLORIDO EM OPENGL
    gl2.glBegin(GL2.GL_QUADS);
-   gl2.glColor3f(0f,0f,1f); // Setando Azul
+   gl2.glColor3f(0f,0f,0.8f); // Setando Azul
    gl2.glVertex2f(0.5f, -0.5f); // Setando Lado 01
-   //gl2.glColor3f(0f,1f,0f); // Setando Verde
    gl2.glVertex2f(0.5f, 0.5f); // Setando Lado 02
-   //gl2.glColor3f(1f,0f,0f); // Setando Vermelho
    gl2.glVertex2f(-0.5f, 0.5f); // Setando Lado 03
    gl2.glVertex2f(-0.5f, -0.5f); // Setando Lado 04
    gl2.glEnd();
 
  //	  TRIANGULO DO TETO - COLORIDO EM OPENGL
    gl.glBegin(GL2.GL_TRIANGLES);
-   gl.glColor3f(1f,  0f,  0f);   //nos da vermelho          
-   gl.glVertex2f(0f,1f); // Lado 01
-   //gl.glColor3f(0f,  1f,  0f);   //nos da verde           
-   gl.glVertex2f(0.61f,0.51f);	// Lado 02 
-   //gl.glColor3f(0f,  0f,  1f);	//nos da azul  
+   gl.glColor3f(0.8f,  0f,  0f);   //nos da vermelho          
+   gl.glVertex2f(0f,1f); // Lado 01           
+   gl.glVertex2f(0.61f,0.51f);	// Lado 02  
    gl.glVertex2f(-0.61f,0.51f); //Lado 03
    gl.glEnd();
    
    //	QUADRADO DA PORTA - COLORIDO EM OPENGL
    gl3.glBegin(GL2.GL_QUADS);
-   gl3.glColor3f(0f,1f,0f); // Setando Verde
+   gl3.glColor3f(0f,0.8f,0f); // Setando Verde
    gl3.glVertex2f(0f, -0.45f); // Setando Lado 01
    gl3.glVertex2f(0.2f, -0.45f); // Setando Lado 02
    gl3.glVertex2f(0.2f, 0.2f); // Setando Lado 04
@@ -63,7 +59,7 @@ public  class Line implements GLEventListener {
    
    //	QUADRADO DA JANELA - COLORIDO EM OPENGL
    gl4.glBegin(GL2.GL_QUADS);
-   gl4.glColor3f(0f,0.7f,0.7f); // Setando Verde
+   gl4.glColor3f(1f,1f,0f); // Setando Verde
    gl4.glVertex2f(-0.2f, 0.45f); // Setando Lado 01
    gl4.glVertex2f(-0.4f, 0.45f); // Setando Lado 02
    gl4.glVertex2f(-0.4f, 0.2f); // Setando Lado 04
