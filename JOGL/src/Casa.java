@@ -7,17 +7,26 @@ import com.jogamp.opengl.GLEventListener;
 import com.jogamp.opengl.GLProfile;
 import com.jogamp.opengl.awt.GLCanvas;
 
-public  class Line implements GLEventListener {
+/**
+ * 
+ * @author RenanNM
+ * @since 02/05/2017
+ * <p>Classe responsável por representar uma casa utilizando de formas geométricas coloridas digitalmente</p>
+ * 
+ * */
+
+public  class Casa implements GLEventListener {
 	
    @Override
    public void display(GLAutoDrawable drawable) {
-      final GL2 gl = drawable.getGL().getGL2();
-      final GL2 gl2 = drawable.getGL().getGL2();
-      final GL2 gl3 = drawable.getGL().getGL2();
-      final GL2 gl4 = drawable.getGL().getGL2();
+      final GL2 gl = drawable.getGL().getGL2();  // Quadrado Base da Casa (Paredes)
+      final GL2 gl2 = drawable.getGL().getGL2(); // Triângulo do Teto
+      final GL2 gl3 = drawable.getGL().getGL2(); // Quadrado da Porta
+      final GL2 gl4 = drawable.getGL().getGL2(); // Quadrado da Janela
+      
 //final GL2 gl = drawable.getGL().getGL2();
 //		LINHA EXEMPLO      
-//      gl.glBegin (GL2.GL_LINES);//static field
+//      gl.glBegin (GL2.GL_CasaS);//static field
 //      gl.glVertex3f(0.50f,-0.50f,0);
 //      gl.glVertex3f(-0.50f,0.50f,0);
 //      gl.glEnd();
@@ -42,10 +51,10 @@ public  class Line implements GLEventListener {
 
  //	  TRIANGULO DO TETO - COLORIDO EM OPENGL
    gl.glBegin(GL2.GL_TRIANGLES);
-   gl.glColor3f(0.8f,  0f,  0f);   //nos da vermelho          
-   gl.glVertex2f(0f,1f); // Lado 01           
-   gl.glVertex2f(0.61f,0.51f);	// Lado 02  
-   gl.glVertex2f(-0.61f,0.51f); //Lado 03
+   gl.glColor3f(0.8f, 0f, 0f);   //Setando vermelho          
+   gl.glVertex2f(0f, 1f); // Lado 01           
+   gl.glVertex2f(0.61f, 0.51f);	// Lado 02  
+   gl.glVertex2f(-0.61f, 0.51f); //Lado 03
    gl.glEnd();
    
    //	QUADRADO DA PORTA - COLORIDO EM OPENGL
@@ -88,8 +97,8 @@ public  class Line implements GLEventListener {
    
       // The canvas
       final GLCanvas glcanvas = new GLCanvas(capabilities);
-      Line line = new Line();
-      glcanvas.addGLEventListener(line);
+      Casa Casa = new Casa();
+      glcanvas.addGLEventListener(Casa);
       glcanvas.setSize(400, 400);
       
    
