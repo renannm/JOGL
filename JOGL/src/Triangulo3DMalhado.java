@@ -9,7 +9,7 @@ import com.jogamp.opengl.awt.GLCanvas;
 import com.jogamp.opengl.glu.GLU;
 import com.jogamp.opengl.util.FPSAnimator;
 
-public class Triangulo3DProfessor implements GLEventListener {
+public class Triangulo3DMalhado implements GLEventListener {
 
 	private GLU glu = new GLU();
 	   private float rtri = 0.0f; 
@@ -17,7 +17,7 @@ public class Triangulo3DProfessor implements GLEventListener {
 		
 	   @Override
 	   public void display( GLAutoDrawable drawable ) {
-		      final GL2 gl = drawable.getGL().getGL2();
+		      final GL2 gl = drawable.getGL().getGL2(); //Objeto Triângulo
 		      final GL2 gl2 = drawable.getGL().getGL2(); //Malha de linhas 01
 		      final GL2 gl3 = drawable.getGL().getGL2(); //Malha de linhas 01
 		   
@@ -46,11 +46,18 @@ public class Triangulo3DProfessor implements GLEventListener {
 	     // gl.glRotatef( -rtri, 1.0f, 1.0f, 0.0f );
 	      
 	   // CRIANDO O CHÃO COM MALHA DE LINHAS TRACEJADAS 
+	      
 	      //MALHA 01
+	      
+	      // Definindo o eixo Z como o escolhido.
+	      // A amplitude do eixo Z é de -10 até 10 (20 casas)
+	      // Y é sempre -1 (altura o chão)
+	      // O eixo X é definidp como uma linha que repete 20 vezes (de -10 á 10)
+	      
 	      gl2.glBegin (GL2.GL_LINES);
 	      float z = -10f;
 	      while(z != 10.0f){
-	    	  gl.glColor3f(1f, 1f, 1f);
+	    	  gl.glColor3f(1f, 1f, 1f); //Definindo a cor Branca
 		      gl.glVertex3f(-10f,-1,z);
 		      gl.glVertex3f(10f,-1,z);
 		      z += 0.25f;
@@ -59,10 +66,16 @@ public class Triangulo3DProfessor implements GLEventListener {
 	      gl2.glFlush();
 	      
 	      //MALHA 02
+	      
+	      // Definindo o eixo X como o escolhido.
+	      // A amplitude do eixo X é de -10 até 10 (20 casas)
+	      // Y é sempre -1 (altura o chão)
+	      // O eixo Z é definidp como uma linha que repete 20 vezes (de -10 á 10)
+	      
 	      gl3.glBegin (GL2.GL_LINES);
 	      float x = -10f;
 	      while(x != 10.0f){
-	    	  gl.glColor3f(1f, 1f, 1f);
+	    	  gl.glColor3f(1f, 1f, 1f); //Definindo a cor Branca
 		      gl.glVertex3f(x,-1,-10f);
 		      gl.glVertex3f(x,-1,10f);
 		      x += 0.25f;
@@ -168,7 +181,7 @@ public class Triangulo3DProfessor implements GLEventListener {
 			
 	      // The canvas
 	      final GLCanvas glcanvas = new GLCanvas( capabilities );
-	      Triangulo3DProfessor triangledepthtest = new Triangulo3DProfessor();
+	      Triangulo3DMalhado triangledepthtest = new Triangulo3DMalhado();
 			
 	      glcanvas.addGLEventListener( triangledepthtest );
 	      glcanvas.setSize( 400, 400 );
